@@ -5,6 +5,8 @@ F5® Distributed API Discovery & Protection provides key security functionality 
 deliver and secure APIs. This lab's tasks will walk through the configuration steps and note additional
 configurations available.
 
+**Expected Lab Time: 20 minutes**
+
 * **API Discovery**: Provided via machine-based learning processes, enables visualization of the API Framework,
   assesses use of end-points, discovers new end-points based on flows, identifies use of sensitive information,   
   and enables swagger file export.
