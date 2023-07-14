@@ -1,11 +1,6 @@
 Lab 1: Deploying and Managing F5 Distributed Cloud Web Application Firewall Configuration
 =========================================================================================
 
-.. warning :: If you are using multiple labs in one course, understand that some steps below
-   may be redundant depending on labs deployed. To gain full benefits from this lab, please 
-   delete any objects created in your prior lab and continue with this lab as all necessary
-   objects will be recreated. 
-
 Lab 1 will focus on the deployment and security of an existing hosted application using F5 
 Distributed Cloud Platform and Services. This lab will be deployed in a SaaS only configuration 
 with no on-premises (public or private cloud) elements.  All configurations will be made via 
@@ -23,7 +18,7 @@ Following the tasks in the prior **Introduction** Section, you should now be abl
 F5 Distributed Cloud Console, having set your Work Domain Roles and Skill levels. If you have not
 done so already, please login to your tenant for this lab and proceed to Task 1.
 
-**Expected Lab Time: 25 minutes**
+**Expected Lab Time: 20 minutes**
 
 Task 1: Configure Load Balancer and Origin Pool
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -258,8 +253,7 @@ review the generated event data to make additional configuration changes.
 | 2. Using some of the sample attacks below, add the URI path & variables to your application  |
 |                                                                                              |
 |    to generate security event data.                                                          |
-|                                                                                              |
-|    * /?cmd=cat%20/etc/passwd                                                                 |
+|                                                                                              |                                                                |
 |    * /product?id=4%20OR%201=1                                                                |
 |    * /../../../../etc/shadow                                                                 |
 |    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                |
@@ -269,9 +263,7 @@ review the generated event data to make additional configuration changes.
 |    to a notepad or note resource).                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
-|                                                                                              |
-| |lab023|                                                                                     |
-|                                                                                              |
+|                                                                                              |                                                                                              |
 | |lab024|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -503,106 +495,6 @@ review the generated event data to make additional configuration changes.
 | |lab048|                                                                                     |
 |                                                                                              |
 | |lab049|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-Task 4: Understanding Exclusions and Customizing WAF Policy  
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In this task you will come to understand how exclusions are applied. You will also further  
-customize the WAF policy just built.
-
-+----------------------------------------------------------------------------------------------+
-| 1. In the **HTTP Load Balancers** window **(Manage > Load Balancers > HTTP Load Balancers)** |
-|                                                                                              |
-|    Click on the three action dots in the **Actions** column then **Manage Configuration**    |
-|                                                                                              |
-|    from the dropdown menu.                                                                   |
-+----------------------------------------------------------------------------------------------+
-| |lab050|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 2. Click on the **JSON** tab in the horizontal navigation as shown and scroll to find the    |
-|                                                                                              |
-|    **waf_exclusion_rule** section. Observe that the exclusion rule is associated with the    |
-|                                                                                              |
-|    Load Balancer configuration and not the WAF Policy.                                       |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *This allows for policy reuse and reduces the need for specific application WAF Policies*.|
-|                                                                                              |
-| 3. Click on the **Cancel and Exit** to return to the prior window.                           |
-+----------------------------------------------------------------------------------------------+
-| |lab051|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 4. In the left-hand navigation menu, navigate  to **Manage** section and click the **App**   |
-|                                                                                              |
-|    **Firewall** link.                                                                        |
-|                                                                                              |
-| 5. On your App Firewall policy **<namespace>-appfw**, click the three dots in the **Actions**|
-|                                                                                              |
-|    column and then click **Manage Configuration**.                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab052|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 6. Click **Edit Configuration** in the top right corner.                                     |
-|                                                                                              |
-| 7. Use the left-hand navigation and click on **Advanced Configuration**.                     |
-+----------------------------------------------------------------------------------------------+
-| |lab053|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 8. Click the drop down menu for **Blocking Response Page** in the **Advanced Configuration** |
-|                                                                                              |
-|    section.                                                                                  |
-+----------------------------------------------------------------------------------------------+
-| |lab054|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 9. Click the dropdown on **Blocking Response Page** and select **Custom** from the dropdown. |
-+----------------------------------------------------------------------------------------------+
-| |lab055|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 10. In the **Blocking Response Page Body** replace the existing text with the text provided  |
-|                                                                                              |
-|     below. Click **Save and Exit** when completed.                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab056|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-Sample Blocking Response Page to be copied::
-
-  <style>body { font-family: Source Sans Pro, sans-serif; }</style>
-  <html style="margin: 0;"><head><title>Rejected Request</title></head>
-  <body style="margin : 0;">
-  <div style="background-color: #046b99; height: 40px; width: 100%;"></div>
-  <div style="min-height: 100px; background-color: white; text-align: center;"></div>
-  <div style="background-color: #fdb81e; height: 5px; width: 100%;"></div>
-  <div id="main-content" style="width: 100%; ">
-  <table width="100%"><tr><td style="text-align: center;">
-  <div style="margin-left: 50px;">
-  <div style="margin-bottom: 35px;"><br/>
-  <span style="font-size: 40pt; color: #046b99;">Rejected Request</span>
-  </div><div style="font-size: 14pt;">
-  <p>The requested URL was rejected. Please consult with your administrator.</p>
-  <p>Your Support ID is: <span style="color:red; font-weight:bold">{{request_id}}</span></p>
-  <p><a href="javascript:history.back()">[Go Back]</a></p>
-  </div></div></td></tr></table></div>
-  <div style="background-color: #222222; position: fixed; bottom: 0px; height: 40px; width: 100%; text-align: center;"></div>
-  </body></html>
-
-+----------------------------------------------------------------------------------------------+
-| 11. You can rerun an attack from Task 3: Step 2 to see the new custom block page.            |
-+----------------------------------------------------------------------------------------------+
-| |lab057|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+

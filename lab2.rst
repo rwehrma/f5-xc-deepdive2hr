@@ -1,4 +1,4 @@
-Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud BotDefense
+Lab 2: Reviewing Signature-based Bot Strategies and enabling F5 Distributed Cloud Bot Defense
 ============================================================================================
 
 The following lab tasks will guide you through a review of signature-based Bot protections
