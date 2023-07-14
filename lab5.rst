@@ -1,420 +1,480 @@
-Lab 5: Rate Limiting
-====================
+Lab 6: API Discovery & Protection 
+=================================
 
-The following lab tasks will guide you the configuration of Rate Limiting feature sets.
-Rate Limiting can be used to implement a variety of L7 security controls; assisting in L7 DDoS, 
-protecting heavy URLs (service process impactful) or mitigating impacts to other controlled endpoints.  
+F5® Distributed API Discovery & Protection provides key security functionality to visualize, understand, 
+deliver and secure APIs. This lab's tasks will walk through the configuration steps and note additional
+configurations available.
 
-**Expected Lab Time: 20 minutes**
+* **API Discovery**: Provided via machine-based learning processes, enables visualization of the API Framework,
+  assesses use of end-points, discovers new end-points based on flows, identifies use of sensitive information,   
+  and enables swagger file export.
 
-Task 1: Establishing a Baseline
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+* **API Protection**: Encompasses a set of definitions and controls to protect and secure the functions, use and 
+  endpoints of the delivered API's framework. 
 
-In this task you will access a test website/webpage to experience access without a Rate Limiting Policy
-engaged.  Following completion of Task1, you will build a Rate Limit Policy (Task2) and the test the 
-Rate Limited experience (Task3).
+Task 1: Swagger File Import & Version Control
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-+----------------------------------------------------------------------------------------------+
-| 1. In your local web browser access the following link, replacing namespace with your own:   |
-|                                                                                              |
-|    **http://<namespace>.lab-sec.f5demos.com/ratelimit.php**                                  |
-|                                                                                              |
-| 2. Refresh the page multiple times and notice you do not receive any errors nor blocked      |
-|                                                                                              |
-|    messages. You can also open your browser's developers to observe requests receiving 200Ks.|
-|                                                                                              |
-|    Let's change that behavior.                                                               |
-+----------------------------------------------------------------------------------------------+
-| |lab000|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-Task 2: Creating a Rate Limiting Policy 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-In this task you will add a Rate Limiting Policy to the application Load Balancer previously created.
+In this task's series of steps you will import swagger files into the F5 Distributed Cloud tenant and explore 
+version control features.
 
 +----------------------------------------------------------------------------------------------+
-| 1. Return to the **Web App & API Protection** configuration window. In the left-hand         |
+| 1. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**  |
 |                                                                                              |
-|    navigation, expand **Manage** and click **Load Balancers > HTTP Load Balancers**.         |
+|    **app-api-v1.json** to your local desktop or workspace.                                   |
 |                                                                                              |
-| 2. Use the **Action Dots** and click **Manage Configuration**                                |
-|                                                                                              |
-| 3. Click **Edit Configuration** in the top right-hand corner.                                |
+|    Link::                                                                                    |
+|      http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json                                 |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the left top click the F5 ball and navigate to the **Web App & API Protection** Tile.  |
 +----------------------------------------------------------------------------------------------+
 | |lab001|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 3. In the left-hand navigation, click on **Files** under the **Manage** section.             |
 |                                                                                              |
+| 4. Click **Add Swagger File** in the main window area as shown. Alternatively, the link near |
+|                                                                                              |
+|    the top of the window can also be used.                                                   |
++----------------------------------------------------------------------------------------------+
 | |lab002|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 4. Click **Common Security Controls** in the left-hand navigation & locate **Rate Limiting**.|
+| 5. In the resulting **New Swagger File** window, input **app-api** for the **Name** under    |
 |                                                                                              |
-| 5. Click the dropdown for **Rate Limiting** and select **Custom Rate Limiting Parameters**.  |
+|    the **Metadata** section.                                                                 |
+|                                                                                              |
+| 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the file |
+|                                                                                              |
+|    downloaded in Step 1 above and click **Open**.                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the expanded **Custom Rate Limiting Parameters** click the **View Configuration** Link.|
+| 7. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**     |
++----------------------------------------------------------------------------------------------+
+| |lab003a|                                                                                    |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. In the resulting **Swagger Files** window, you will see the upload file with additional   |
+|                                                                                              |
+|    metadata.                                                                                 |
+|                                                                                              |
+| .. note::                                                                                    |
+|    *You will also see a dialogue box, in the bottom left of your screen indicating the file* |
+|                                                                                              |
+|    *has been successfully added.*                                                            |
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 7. In the resulting **Rate Limit Configuration** window, in the **Request Rate Limiter**     |
+| 9. For the next step, use the following link, to download the JSON/OpenAPI spec file         |
 |                                                                                              |
-|    section set the following values as shown:                                                |
+|    **app-api-v2.json** to your local desktop or workspace.                                   |
 |                                                                                              |
-|    * **Number:** 2                                                                           |
-|    * **Per Period:** Minute                                                                  |
-|    * **Burst Multiplier:** 1                                                                 |
+|    Link::                                                                                    |
+|      http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json                                 |
 |                                                                                              |
-| 8. Click the drop-down for **Rate Limiter Policies** and select **Rate Limiter Policies**.   |
+| .. note::                                                                                    |
+|    *This is a modified version (v2) of the JSON/OpenAPI spec file you previously downloaded* |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 10. Returning to the **Swagger Files** window you were at previously, click the three dots … |
+|                                                                                              |
+|     in the **Action** column.  In the resulting selection menu, select **Update New Version**|
 +----------------------------------------------------------------------------------------------+
 | |lab005|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 9. In the new row for **Rate Limiter Policies**, click the dropdown an then select **Add**   |
+| 11. In the **Upload Swagger File** section, click the **Upload File** button. Select the file|
 |                                                                                              |
-|    **Item** from the list as shown.                                                          |
+|     downloaded in Step 9 above and click **Open**.                                           |
+|                                                                                              |
+| 12. Observe that the file **app-api-v1.json**  is present and the click **Save and Exit**    |
 +----------------------------------------------------------------------------------------------+
 | |lab006|                                                                                     |
+|                                                                                              |
+| |lab006a|                                                                                    |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 10. In the **Rate Limiter Policy** window, enter **rate-limit** in the **Name** field in     |
+| 13. In the resulting **Swagger Files** window, you will see the upload file with additional  |
 |                                                                                              |
-|     **Metadata** section and then click **Configure** within the **Rules** section.          |
+|     metadata seen previously.                                                                |
 |                                                                                              |
-| 11. In the resulting **Rules** window, click **Add Item**.                                   |
+| 14. Note now that there are **2** versions available of the **app-api** file.  Click the     |
+|                                                                                              |
+|     **2** in the **Versions** column.                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab007|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 15. In the resulting window, observe there are now two versions of the **app-api** spec file.|
 |                                                                                              |
+| .. note::                                                                                    |
+|    *This is an API File update process which can also be performed through the F5*           |
+|                                                                                              |
+|    *Distributed Cloud API framework.                                                         |
+|                                                                                              |
+| 16. Click **X** in the top-right corner and proceed to the next task.                        |
++----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
+Task 2: Swagger Definition
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will establish the Swagger Definition which serves as an object
+
+pointer to imported swagger files you just uploaded.
+
 +----------------------------------------------------------------------------------------------+
-| 12. In the **Rate Limiter Policy** window within the **Metadata** section input              |
+| 1. In the left-hand navigation of the **Web App & API Protection** service, click on **API** |
 |                                                                                              |
-|     **rate-limit-auth** into the **Name** field.                                             |
-|                                                                                              |
-| 13. Using the **Actions** drop-down select, **Apply Rate Limiter**.                          |
-|                                                                                              |
-| 14. In the left-hand navigation, click on **Request Match**.                                 |
+|    **Management** under the **Manage** section and then click **API Definition**.            |
 +----------------------------------------------------------------------------------------------+
 | |lab009|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 15. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
+| 2. In the resulting **API Definition** window, click **Add API Definition** in the main      |
 |                                                                                              |
-|     section as shown.                                                                        |
-|                                                                                              |
-| 16. In the resulting **HTTP Method** window under **Method List**, select **POST** then      |
-|                                                                                              |
-|     click **Apply**.                                                                         |
+|    window area as shown.                                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab010|                                                                                     |
-|                                                                                              |
-| |lab011|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 17. Observe that **HTTP Method** now appears **Configured**.                                 |
+| 3. In the resulting **New API Definition** window, input **app-api-spec** for the **Name**   |
 |                                                                                              |
-| 18. Further down in the **Request Match** section, select the **Configure** link in the      |
+|    under the **Metadata** section.                                                           |
 |                                                                                              |
-|     **HTTP Path** section as shown.                                                          |
+| 4. In the **Swagger Specs** section, click the **Arrow** in the **Select Item** box in the   |
 |                                                                                              |
-| 19. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
+|    **Swagger Specs** column.                                                                 |
 |                                                                                              |
-|     section the input **/auth.php** as shown and then click **Apply**.                       |
+| 5. Select the version 2 of the previously uploaded swagger spec file. It will be in the      |
 |                                                                                              |
-| .. note::                                                                                    |
+|    format **<namespace>/app-api/v2-<current-date>**.                                         |
 |                                                                                              |
-|    *Although its already protect by Bot Defense, we can also control the rate at which the*  |
+| 6. Once selected, click **Save and Exit** in the bottom-right corner.                        |
++----------------------------------------------------------------------------------------------+
+| |lab011|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
+Task 3: Attaching API Discovery & Protection to Load Balancer Object 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Discovery & Protection feature on the 
+previously built Load Balancer object delivering the targeted application/API.
+
++----------------------------------------------------------------------------------------------+
+| 1. In the left-hand navigation of the **Web App & API Protection** service, click on **Load**|
 |                                                                                              |
-|    *specific authentication page can be POSTed to (or any other page).*                      |
+|    **Balancers** under the **Manage** section.                                               |
 +----------------------------------------------------------------------------------------------+
 | |lab012|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 2. In the resulting **Load Balancers** window, click on the three dots **...** in the        |
 |                                                                                              |
+|    **Action** column, and the select **Manage Configuration**.                               |
++----------------------------------------------------------------------------------------------+
 | |lab013|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 20. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
-|                                                                                              |
-|     **Rate Limiter Policy** window.                                                          |
-|                                                                                              |
-| 21. Observe the rate limit rule just created and click **Add Item** to build another rule.   |
+| 3. Click **Edit Configuration** in the top-right corner.                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab014|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. Click **API Protection** in the left-hand navigation.                                     |
 |                                                                                              |
+| 5. In the **API Protection** section, click the drop-down arrow next to **API Definition**   |
+|                                                                                              |
+|    and select **Enable**.                                                                    |
++----------------------------------------------------------------------------------------------+
 | |lab015|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 22. In the **Rate Limiter Policy** window within the **Metadata** section input              |
+| 6. In the updated **Use API Definition** section, click the drop-down arrow and select the   |
 |                                                                                              |
-|     **rate-limit-page** into the **Name** field.                                             |
-|                                                                                              |
-| 23. Using the **Actions** drop-down select, **Apply Rate Limiter**.                          |
-|                                                                                              |
-| 24. In the left-hand navigation, click on **Request Match**.                                 |
+| 7. previously created API Definition **<namespace>/app-api-spec**.                           |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 25. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
+| 8. In the **API Protection** section, click the drop-down arrow next to **API Discovery**    |
 |                                                                                              |
-|     section as shown.                                                                        |
-|                                                                                              |
-| 26. In the resulting **HTTP Method** window under **Method List**, select **GET** then       |
-|                                                                                              |
-|     click **Apply**.                                                                         |
+|    and select **Enable**.                                                                    |
 +----------------------------------------------------------------------------------------------+
 | |lab017|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 9. In the updated **API Discovery** section, click the drop-down arrow next to **Learn**     |
 |                                                                                              |
+|    **from Traffic with Redirect Response** and then select **Enable Learning from Redirect** |
+|                                                                                              |
+|    *Traffic**.                                                                               |
++----------------------------------------------------------------------------------------------+
 | |lab018|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 27. Observe that **HTTP Method** now appears **Configured**.                                 |
-|                                                                                              |
-| 28. Further down in the **Request Match** section, select the **Configure** link in the      |
-|                                                                                              |
-|     **HTTP Path** section as shown.                                                          |
-|                                                                                              |
-| 29. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
-|                                                                                              |
-|     section the input **/ratelimit.php** as shown and then click **Apply**.                  |
+| 10. In the **API Protection Rules** section, click the **Configure** link.                   |
 +----------------------------------------------------------------------------------------------+
 | |lab019|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 11. In the resulting **API Protection Rules** window, click **Configure** in the **API**     |
 |                                                                                              |
+|     **Endpoints** section.                                                                   |
++----------------------------------------------------------------------------------------------+
 | |lab020|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 30. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
-|                                                                                              |
-|     **Rate Limiter Policy** window.                                                          |
-|                                                                                              |
-| 31. Observe the added rate limit rule and click **Add Item** to build another rule.          |
+| 12. Click **Add Item** in the **API Endpoints** window.                                      |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 13. In the resulting window, input **block-endpoint** in the **Name** field of the           |
 |                                                                                              |
+|     **Metadata** section.                                                                    |
+|                                                                                              |
+| 14. In the **Action** area, click the drop-down arrow indicated and select **Deny**.         |
++----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 32. In the **Rate Limiter Policy** window within the **Metadata** section input              |
+| 15. In the **API Endpoint** section, click on the **API Endpoint** input field as indicated. |
 |                                                                                              |
-|     **bypass** into the **Name** field.                                                      |
-|                                                                                              |
-| 33. Using the **Actions** drop-down select, **Bypass Rate Limiter**.                         |
-|                                                                                              |
-| 34. In the left-hand navigation, click on **Request Match**.                                 |
+| 16. Select the **See Suggestions** link.                                                     |
 +----------------------------------------------------------------------------------------------+
 | |lab023|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 35. In the **Request Match** section and select the **Configure** link in the **HTTP Method**|
+| 17. Select **/v2/user** from the available options provided.                                 |
 |                                                                                              |
-|     section as shown.                                                                        |
+| .. note::                                                                                    |
+|    *The endpoints available are provided via the spec you previously imported and defined*   |
 |                                                                                              |
-| 36. In the resulting **HTTP Method** window under **Method List**, select **ANY** then       |
-|                                                                                              |
-|     click **Apply**.                                                                         |
+| 18. In the **HTTP Methods** area, click in the **Method List** input field.                  |
 +----------------------------------------------------------------------------------------------+
 | |lab024|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 19. Select **Any** from the available methods provided.                                      |
 |                                                                                              |
+| .. note::                                                                                    |
+|    *Multiple methods can be selected if needed*                                              |
++----------------------------------------------------------------------------------------------+
 | |lab025|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 37. Observe that **HTTP Method** now appears **Configured**.                                 |
-|                                                                                              |
-| 38. Further down in the **Request Match** section, select the **Configure** link in the      |
-|                                                                                              |
-|     **HTTP Path** section as shown.                                                          |
-|                                                                                              |
-| 39. Observe the various Path definition options, click **Add Item** in the **Prefix Values** |
-|                                                                                              |
-|     section the input **/** as shown and then click **Apply**.                               |
+| 20. Review the configuration and click, the **Apply** button.                                |
 +----------------------------------------------------------------------------------------------+
 | |lab026|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 21. Review the API Endpoint deny rule and click, the **Apply** button.                       |
++----------------------------------------------------------------------------------------------+
 | |lab027|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 40. Observe that **HTTP Path** now also appears **Configured**. Click **Apply** on the       |
+| 22. Note that API Protection Rules are configure for the API Endpoints and click, the        |
 |                                                                                              |
-|     **Rate Limiter Policy** window.                                                          |
-|                                                                                              |
-| 41. Observe the three created rate limit rules and click **Apply**.                          |
+|     **Apply** button.                                                                        |
 +----------------------------------------------------------------------------------------------+
 | |lab028|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
+Task 4: Attach API Rate Limiting to Load Balancer Object 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+In this task's series of steps you will enable the API Rate Limiting feature on the 
+previously built Load Balancer object delivering the targeted application/API.
+
++----------------------------------------------------------------------------------------------+
+| 1. Using the left-hand navigation, click the **Common Security Controls** link.              |
++----------------------------------------------------------------------------------------------+
 | |lab029|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 42. Observe that rules are now **Configured**. Complete the custom **Rate Limiter Policy** by|
+| 2. Locate the **Rate Limiting** area of the **Common Security Controls** and use the         |
 |                                                                                              |
-|     clicking **Continue**.                                                                   |
+|    drop-down to select **API Rate Limit**.                                                   |
 +----------------------------------------------------------------------------------------------+
 | |lab030|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 43. Observe the **Request Rate Limiter** options for number of requests, the Per Period      |
 |                                                                                              |
-|     interval and the Burst Multiplier.                                                       |
-|                                                                                              |
-| 44. Also observe that IPs can be allowed without Rate Limiting policies being applied        |
-|                                                                                              |
-| 45. Click **Apply** to add the **Rate Limit Configuration** to the application Load Balancer.|
-|                                                                                              |
-| .. note::                                                                                    |
-|                                                                                              |
-|    *Although only one policy is being added, multiple Rate Limit policies can be attached.*  |
-+----------------------------------------------------------------------------------------------+
 | |lab031|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 46. Observe that the **Custom Rate Limiting Parameters** now show **Configured** and then    |
+| 3. In the expanded menu under **Rate Limiting**, click **Configure** in the **API**          |
 |                                                                                              |
-|     click on **Other Settings** in the left-hand navigation.                                 |
-|                                                                                              |
-| 47. Once at the bottom of the **HTTP Load Balancer** configuration, click **Save and Exit**. |
+|    **Endpoints** area.                                                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab032|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 4. In the resulting window **API Endpoints** window, click **Add Item**.                     |
++----------------------------------------------------------------------------------------------+
 | |lab033|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-Task 3: Testing Rate Limiting
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-Now we will retest access to our website and see if our experience has indeed changed.
-
 +----------------------------------------------------------------------------------------------+
-| 1. In your local web browser access the following link, replacing namespace with your own:   |
+| 5. In the resulting configuration window, select **/v2/store/order/{orderId}** for **API**   |
 |                                                                                              |
-|    **http://<namespace>.lab-sec.f5demos.com/ratelimit.php**                                  |
+|    **Endpoint** input.                                                                       |
 |                                                                                              |
-| 2. Refresh the page multiple times and quickly... did you experience a different result?     |
-|                                                                                              |
-|    Rate Limited responses receive **429** response codes and block pages as shown in the     |
-|                                                                                              |
-|    image below.                                                                              |
+| 6. Select **ANY** for **Method** input and then click the **Apply** button.                  |
 +----------------------------------------------------------------------------------------------+
 | |lab034|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 3. Rate Limited requests can also be seen in **Security Events** as Service Policy blocks.   |
-|                                                                                              |
-| 4. Review your Security Events by navigating back to the Security Dashboard to see the 429   |
-|                                                                                              |
-|    blocks.                                                                                   |
-|                                                                                              |
-| .. note::                                                                                    |
-|                                                                                              |
-|    *Review Lab1/Task3 to find Security Events. You can copy you support ID to search with!*  |
+| 7. Review the API Endpoint rate limiting rule and click, the **Apply** button.               |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| 8. Note the updated configuration for API Rate limiting, Click **Other Settings** in  the    |
 |                                                                                              |
+|    the left-hand navigation.                                                                 |
++----------------------------------------------------------------------------------------------+
 | |lab036|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| **End of Lab 5:**  This concludes Lab 5, feel free to review and test the configuration.     |
+| 9. Once at the bottom of the HTTP Load Balancer configuration and click the **Apply** button.|
++----------------------------------------------------------------------------------------------+
+| |lab037|                                                                                     |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| This configuration highlights the elements needed to deploy API Discovery & Protection. This |
 |                                                                                              |
-| A Q&A session will begin shortly to conclude the overall lab.                                |
+| configuration can also be fully deployed and managed via the F5 Distributed Cloud API.       |
++----------------------------------------------------------------------------------------------+
+
++----------------------------------------------------------------------------------------------+
+| **End of Lab 6:**  This concludes Lab 6.                                                     |
+|                                                                                              |
+| A Q&A session will begin shortly after conclusion of the overall lab.                        |
 +----------------------------------------------------------------------------------------------+
 | |labend|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
-.. |lab000| image:: _static/lab5-000.png
+.. _app-api-file-v1: http://demo-app.amer.myedgedemo.com/lab/app-api-v1.json
+.. _app-api-file-v2: http://demo-app.amer.myedgedemo.com/lab/app-api-v2.json
+.. |lab001| image:: _static/lab6-001.png
    :width: 800px
-.. |lab001| image:: _static/lab5-001.png
+.. |lab002| image:: _static/lab6-002.png
    :width: 800px
-.. |lab002| image:: _static/lab5-002.png
+.. |lab003| image:: _static/lab6-003.png
    :width: 800px
-.. |lab003| image:: _static/lab5-003.png
+.. |lab003a| image:: _static/lab6-003a.png
    :width: 800px
-.. |lab004| image:: _static/lab5-004.png
+.. |lab004| image:: _static/lab6-004.png
    :width: 800px
-.. |lab005| image:: _static/lab5-005.png
+.. |lab005| image:: _static/lab6-005.png
    :width: 800px
-.. |lab006| image:: _static/lab5-006.png
+.. |lab006| image:: _static/lab6-006.png
    :width: 800px
-.. |lab007| image:: _static/lab5-007.png
+.. |lab006a| image:: _static/lab6-006a.png
    :width: 800px
-.. |lab008| image:: _static/lab5-008.png
+.. |lab007| image:: _static/lab6-007.png
    :width: 800px
-.. |lab009| image:: _static/lab5-009.png
+.. |lab008| image:: _static/lab6-008.png
    :width: 800px
-.. |lab010| image:: _static/lab5-010.png
+.. |lab009| image:: _static/lab6-009.png
    :width: 800px
-.. |lab011| image:: _static/lab5-011.png
+.. |lab010| image:: _static/lab6-010.png
    :width: 800px
-.. |lab012| image:: _static/lab5-012.png
+.. |lab011| image:: _static/lab6-011.png
    :width: 800px
-.. |lab013| image:: _static/lab5-013.png
+.. |lab012| image:: _static/lab6-012.png
    :width: 800px
-.. |lab014| image:: _static/lab5-014.png
+.. |lab013| image:: _static/lab6-013.png
    :width: 800px
-.. |lab015| image:: _static/lab5-015.png
+.. |lab014| image:: _static/lab6-014.png
    :width: 800px
-.. |lab016| image:: _static/lab5-016.png
+.. |lab015| image:: _static/lab6-015.png
    :width: 800px
-.. |lab017| image:: _static/lab5-017.png
+.. |lab016| image:: _static/lab6-016.png
    :width: 800px
-.. |lab018| image:: _static/lab5-018.png
+.. |lab017| image:: _static/lab6-017.png
    :width: 800px
-.. |lab019| image:: _static/lab5-019.png
+.. |lab018| image:: _static/lab6-018.png
    :width: 800px
-.. |lab020| image:: _static/lab5-020.png
+.. |lab019| image:: _static/lab6-019.png
    :width: 800px
-.. |lab021| image:: _static/lab5-021.png
+.. |lab020| image:: _static/lab6-020.png
    :width: 800px
-.. |lab022| image:: _static/lab5-022.png
+.. |lab021| image:: _static/lab6-021.png
    :width: 800px
-.. |lab023| image:: _static/lab5-023.png
+.. |lab022| image:: _static/lab6-022.png
    :width: 800px
-.. |lab024| image:: _static/lab5-024.png
+.. |lab023| image:: _static/lab6-023.png
    :width: 800px
-.. |lab025| image:: _static/lab5-025.png
+.. |lab024| image:: _static/lab6-024.png
    :width: 800px
-.. |lab026| image:: _static/lab5-026.png
+.. |lab025| image:: _static/lab6-025.png
    :width: 800px
-.. |lab027| image:: _static/lab5-027.png
+.. |lab026| image:: _static/lab6-026.png
    :width: 800px
-.. |lab028| image:: _static/lab5-028.png
+.. |lab027| image:: _static/lab6-027.png
    :width: 800px
-.. |lab029| image:: _static/lab5-029.png
+.. |lab028| image:: _static/lab6-028.png
    :width: 800px
-.. |lab030| image:: _static/lab5-030.png
+.. |lab029| image:: _static/lab6-029.png
    :width: 800px
-.. |lab031| image:: _static/lab5-031.png
+.. |lab030| image:: _static/lab6-030.png
    :width: 800px
-.. |lab032| image:: _static/lab5-032.png
+.. |lab031| image:: _static/lab6-031.png
    :width: 800px
-.. |lab033| image:: _static/lab5-033.png
+.. |lab032| image:: _static/lab6-032.png
    :width: 800px
-.. |lab034| image:: _static/lab5-034.png
+.. |lab033| image:: _static/lab6-033.png
    :width: 800px
-.. |lab035| image:: _static/lab5-035.png
+.. |lab034| image:: _static/lab6-034.png
    :width: 800px
-.. |lab036| image:: _static/lab5-036.png
+.. |lab035| image:: _static/lab6-035.png
+   :width: 800px
+.. |lab036| image:: _static/lab6-036.png
+   :width: 800px
+.. |lab036| image:: _static/lab6-036.png
+   :width: 800px
+.. |lab037| image:: _static/lab6-037.png
    :width: 800px
 .. |labend| image:: _static/labend.png
    :width: 800px
