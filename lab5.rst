@@ -1,4 +1,4 @@
-Lab 6: API Discovery & Protection 
+Lab 5: API Discovery & Protection 
 =================================
 
 F5® Distributed API Discovery & Protection provides key security functionality to visualize, understand, 
