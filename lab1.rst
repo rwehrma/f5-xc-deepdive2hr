@@ -320,45 +320,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 11. The resulting **Search** input field and listed **Keys**, can be used to filter requests |
-|                                                                                              |
-|     in this view.                                                                            |
-+----------------------------------------------------------------------------------------------+
-| |lab030|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *The available Key list to search is dynamically updated based on the requests in the*
-   *selected time view.* 
-
-+----------------------------------------------------------------------------------------------+
-| 12. Closing the filters view, note the available **Quick Filters** for Response Codes which  |
-|                                                                                              |
-|     allows quickly filtering the requests by toggling **on** or **off** each response code   |
-|                                                                                              |
-|     category.                                                                                |
-|                                                                                              |
-| 13. Click the **Forensics** tab on the right side of the view as shown.                      |
-+----------------------------------------------------------------------------------------------+
-| |lab031|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 14. The *Forensics* Filter  provides summarized top categories which provides quicker        |
-|                                                                                              |
-|     analysis of the request log data.  Collapse the **Forensics** view when done using the   |
-|                                                                                              |
-|     indicated arrow.                                                                         |
-+----------------------------------------------------------------------------------------------+
-| |lab032|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *Individual forensic categories can be changed using the noted pencil icon to surface*
-   *additional top data details.*
-
-+----------------------------------------------------------------------------------------------+
-| 15. Using the left-hand navigation, click **Dashboards** and then select **Security**        |
+| 11. Using the left-hand navigation, click **Dashboards** and then select **Security**        |
 |                                                                                              |
 |     **Dashboard**.                                                                           |
 +----------------------------------------------------------------------------------------------+
@@ -366,13 +328,13 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 16. Review the **Security Dashboard** display (you may have limited data) .                  |
+| 12. Review the **Security Dashboard** display (you may have limited data) .                  |
 +----------------------------------------------------------------------------------------------+
 | |lab034|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 17. Scroll to **Load Balancers** section and click the **<namespace>-lb** object.            |
+| 13. Scroll to **Load Balancers** section and click the **<namespace>-lb** object.            |
 +----------------------------------------------------------------------------------------------+
 | |lab035|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -383,7 +345,7 @@ review the generated event data to make additional configuration changes.
    *specific details.*
 
 +----------------------------------------------------------------------------------------------+
-| 18. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
+| 14. From the **Security Dashboard** view, using the horizontal navigation, click **Security**|
 |                                                                                              |
 |     **Analytics**.                                                                           |
 +----------------------------------------------------------------------------------------------+
@@ -391,7 +353,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 19. Expand your latest security event as shown.                                              |
+| 15. Expand your latest security event as shown.                                              |
 +----------------------------------------------------------------------------------------------+
 | |lab037|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -400,7 +362,7 @@ review the generated event data to make additional configuration changes.
    *If you lost your 1 Hour Filter, re-apply using Task 3: Step 6*
 
 +----------------------------------------------------------------------------------------------+
-| 20. Note the summary detail provided **Information** link and identify the **Request ID**    |
+| 16. Note the summary detail provided **Information** link and identify the **Request ID**    |
 |                                                                                              |
 |     which is synonymous with **Support ID** (filterable) from the Security Event Block Page. |
 +----------------------------------------------------------------------------------------------+
@@ -408,11 +370,11 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 21. Scroll to the bottom of the information screen to see specific signatures detected and   |
+| 17. Scroll to the bottom of the information screen to see specific signatures detected and   |
 |                                                                                              |
 |     actions taken during the security event.                                                 |
 |                                                                                              |
-| 22. Next, click on the **Add Filter** link just under the **Security Analytics** title near  |
+| 18. Next, click on the **Add Filter** link just under the **Security Analytics** title near  |
 |                                                                                              |
 |     the top of the **Security Analytics** window.                                            |
 +----------------------------------------------------------------------------------------------+
@@ -420,11 +382,11 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 23. Type **req** in the open dialogue window and select **req_id** from the dropdown.        |
+| 19. Type **req** in the open dialogue window and select **req_id** from the dropdown.        |
 |                                                                                              |
-| 24. Next, select **In** from the **Select Operator** dropdown.                               |
+| 20. Next, select **In** from the **Select Operator** dropdown.                               |
 |                                                                                              |
-| 25. Finally, select/assign a value that matches one of your copied **Support IDs** from      |
+| 21. Finally, select/assign a value that matches one of your copied **Support IDs** from      |
 |                                                                                              |
 |     Task 3, Step 2 as shown.  You can also optionally just paste the Support ID in the       |
 |                                                                                              |
@@ -438,13 +400,13 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 26. You should now be filtered to a single "Security Event", as shown with your selected     |
+| 22. You should now be filtered to a single "Security Event", as shown with your selected     |
 |                                                                                              |
 |     filter. You can expand and review the request as desired using the **arrow** icon.       |
 |                                                                                              |
-| 27. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
+| 23. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
 |                                                                                              |
-| 28. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
+| 24. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
 +----------------------------------------------------------------------------------------------+
 | |lab043|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -453,13 +415,13 @@ review the generated event data to make additional configuration changes.
    *Adding requestor/client to "Blocked or Trusted Clients" is also available.* 
 
 +----------------------------------------------------------------------------------------------+
-| 29. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
+| 25. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
 |                                                                                              |
 |     editable) by scrolling through the window.  The values have been auto-populated based on |
 |                                                                                              |
 |     the selected event to be excluded. Note the various sections and possible controls.      |
 |                                                                                              |
-| 30. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
+| 26. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
 |                                                                                              |
 |     the exclusion should expire. (helpful when testing/validating). the format should be as  |
 |                                                                                              |
@@ -467,7 +429,7 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 |     format (there is no AM/PM).                                                              |
 |                                                                                              |
-| 31. Click **Apply** when complete.                                                           |
+| 27. Click **Apply** when complete.                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab044|                                                                                     |
 |                                                                                              |
@@ -477,13 +439,13 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 32. Click **Apply** on the **WAF Exclusion Rules** summary screen.                           |
+| 28. Click **Apply** on the **WAF Exclusion Rules** summary screen.                           |
 |                                                                                              |
-| 33. Click on **Security Configuration** in the left-hand navigation and note the added       |
+| 29. Click on **Security Configuration** in the left-hand navigation and note the added       |
 |                                                                                              |
 |     **WAF Exclusion Rules** configuration.                                                   |
 |                                                                                              |
-| 34. Scroll to the bottom of the **HTTP Load Balancer** configuration window and click the    |
+| 30. Scroll to the bottom of the **HTTP Load Balancer** configuration window and click the    |
 |                                                                                              |
 |     **Save and Exit** button.                                                                |
 |                                                                                              |
