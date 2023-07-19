@@ -253,7 +253,7 @@ review the generated event data to make additional configuration changes.
 | 2. Using some of the sample attacks below, add the URI path & variables to your application  |
 |                                                                                              |
 |    to generate security event data.                                                          |
-|                                                                                              |                                                                |
+|                                                                                              |
 |    * /product?id=4%20OR%201=1                                                                |
 |    * /../../../../etc/shadow                                                                 |
 |    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                |
@@ -263,7 +263,7 @@ review the generated event data to make additional configuration changes.
 |    to a notepad or note resource).                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
-|                                                                                              |                                                                                              |
+|                                                                                              |
 | |lab024|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
