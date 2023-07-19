@@ -192,17 +192,17 @@ These steps will demonstrate various aspects of the configuration.
    *Distributed Cloud Global Network utilizing Anycast.*
 
 +----------------------------------------------------------------------------------------------+
-| 10. In the **HTTP Load Balancers** window, note the application hostname under the           |
+| 11. In the **HTTP Load Balancers** window, note the application hostname under the           |
 |                                                                                              |
 |     **Domains** column *(This was done in Task1: Step 4)*.                                   |
 |                                                                                              |
-| 11. Click the **Action** dots, and then in the subsequent menu **Manage Configuration**.     |
+| 12. Click the **Action** dots, and then in the subsequent menu **Manage Configuration**.     |
 +----------------------------------------------------------------------------------------------+
 | |lab018|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Click **DNS Information** in the left-hand navigation.                                   |
+| 13. Click **DNS Information** in the left-hand navigation.                                   |
 |                                                                                              |
 |     The value for a CNAME is listed under **Host Name**. The associated "Default/Tenant IP"  |
 |                                                                                              |
@@ -214,7 +214,7 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Click **JSON** in the horizontal navigation at the top-left of the screen.               |
+| 14. Click **JSON** in the horizontal navigation at the top-left of the screen.               |
 |                                                                                              |
 |     The JSON payload (or YAML format, from dropdown) provides for the entire Load Balancer   |
 |                                                                                              |
@@ -224,7 +224,7 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. Click **Documentation** in the horizontal navigation at the top of the screen.           |
+| 15. Click **Documentation** in the horizontal navigation at the top of the screen.           |
 |                                                                                              |
 |     The Documentation screen provides details on the F5 Distributed Cloud Console API.       |
 |                                                                                              |
@@ -232,7 +232,7 @@ These steps will demonstrate various aspects of the configuration.
 |                                                                                              |
 |     actions and associated audit logging.                                                    |
 |                                                                                              |
-| 15. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.               |
+| 16. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.               |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
