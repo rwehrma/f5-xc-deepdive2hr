@@ -406,57 +406,11 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 | 23. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
 |                                                                                              |
-| 24. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
+|     This is where you will be able to create WAF Exceptions.                                 |
+|                                                                                              |
+|     Additionally, Add Blocked and Add Trusted Clients is available.                          |
 +----------------------------------------------------------------------------------------------+
 | |lab043|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *Adding requestor/client to "Blocked or Trusted Clients" is also available.* 
-
-+----------------------------------------------------------------------------------------------+
-| 25. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
-|                                                                                              |
-|     editable) by scrolling through the window.  The values have been auto-populated based on |
-|                                                                                              |
-|     the selected event to be excluded. Note the various sections and possible controls.      |
-|                                                                                              |
-| 26. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
-|                                                                                              |
-|     the exclusion should expire. (helpful when testing/validating). the format should be as  |
-|                                                                                              |
-|     shown *YYYY-MM-DD HH:MM:SS+00:00 (2023-05-30T01:21:00+00:00)*. **HH** must be in 24 hour |
-|                                                                                              |
-|     format (there is no AM/PM).                                                              |
-|                                                                                              |
-| 27. Click **Apply** when complete.                                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab044|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab045|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab046|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 28. Click **Apply** on the **WAF Exclusion Rules** summary screen.                           |
-|                                                                                              |
-| 29. Click on **Security Configuration** in the left-hand navigation and note the added       |
-|                                                                                              |
-|     **WAF Exclusion Rules** configuration.                                                   |
-|                                                                                              |
-| 30. Scroll to the bottom of the **HTTP Load Balancer** configuration window and click the    |
-|                                                                                              |
-|     **Save and Exit** button.                                                                |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Rerunning the attack you just excluded, you will see that it is no longer blocked*.      |
-+----------------------------------------------------------------------------------------------+
-| |lab047|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab048|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-| |lab049|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
