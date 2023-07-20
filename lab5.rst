@@ -281,7 +281,7 @@ previously built Load Balancer object delivering the targeted application/API.
 |                                                                                              |
 | .. note::                                                                                    |
 |                                                                                              |
-|    *If no suggestions populate, confirm **Task 2: Swagger Definition** was completed.*       |
+|    *If no suggestions populate, confirm "Task 2: Swagger Definition" was completed.*         |
 |                                                                                              |
 |    *The available endpoints are provided via the spec you previously imported and defined.*  |
 |                                                                                              |
