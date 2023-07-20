@@ -280,8 +280,10 @@ previously built Load Balancer object delivering the targeted application/API.
 | 17. Select **/v2/user** from the available options provided.                                 |
 |                                                                                              |
 | .. note::                                                                                    |
+|                                                                                              |
+|    *If no suggestions populate, confirm **Task 2: Swagger Definition** was completed.*       |
+|                                                                                              |
 |    *The available endpoints are provided via the spec you previously imported and defined.*  |
-|    *If no suggestions populate, confirm **Task 2: Swagger Definition** was completed.        |
 |                                                                                              |
 | 18. In the **HTTP Methods** area, click in the **Method List** input field.                  |
 +----------------------------------------------------------------------------------------------+
