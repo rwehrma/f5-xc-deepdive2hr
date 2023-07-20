@@ -29,7 +29,7 @@ clients/users for machine learning driven analysis for malicious user mitigation
 +----------------------------------------------------------------------------------------------+
 | 3. Click **Common Security Controls** in the left-hand navigation and locate **User**        |
 |                                                                                              |
-|    **Identification**.                                                                       |
+|    **Identifier**.                                                                       |
 |                                                                                              |
 | 4. Click the drop-down under **User Identification** and select **User Identification**      |
 |                                                                                              |

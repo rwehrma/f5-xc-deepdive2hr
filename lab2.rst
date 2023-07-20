@@ -83,7 +83,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Select **Security Events** from the horizontal navigation.                               |
+| 12. Select **Security Analytics** from the horizontal navigation.                               |
 |                                                                                              |
 | 13. Locate the most recent security event, which should be your curl request. Expand the     |
 |                                                                                              |
