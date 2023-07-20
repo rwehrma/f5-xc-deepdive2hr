@@ -59,6 +59,8 @@ steps will define an application, register its DNS and assign a target as an ori
 |    * **Basic Configuration: List of Domains:** *<namespace>.lab-sec.f5demos.com*             |
 |    * **Basic Configuration: Select Type of Load Balancer:** *HTTP*                           |
 |    * **Basic Configuration: Automatically Manage DNS Records:** *(Check the checkbox)*       |
+| Note : If you do not check the checkbox for Automatically Manage DNS Records you will have   | 
+| to start over.                                                                               |
 |    * **Basic Configuration: HTTP Port:** *80*                                                |
 +----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
