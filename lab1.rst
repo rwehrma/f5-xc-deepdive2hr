@@ -42,7 +42,7 @@ steps will define an application, register its DNS and assign a target as an ori
 | 3. In the resulting screen click the **Add HTTP Load Balancer** in the graphic as shown.     |
 +----------------------------------------------------------------------------------------------+
 | |lab001|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
 | |lab002|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -110,9 +110,9 @@ steps will define an application, register its DNS and assign a target as an ori
 | 12. After returning to the next window and confirming the content, click **Apply**.          |
 +----------------------------------------------------------------------------------------------+
 | |lab008|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
 | |lab009|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
 | |lab010|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -151,7 +151,7 @@ These steps will demonstrate various aspects of the configuration.
 | 6. Select **Custom** from the dropdown menu. Additional configurations will become available.|
 +----------------------------------------------------------------------------------------------+
 | |lab013|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
 | |lab014|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -194,17 +194,17 @@ These steps will demonstrate various aspects of the configuration.
    *Distributed Cloud Global Network utilizing Anycast.*
 
 +----------------------------------------------------------------------------------------------+
-| 10. In the **HTTP Load Balancers** window, note the application hostname under the           |
+| 11. In the **HTTP Load Balancers** window, note the application hostname under the           |
 |                                                                                              |
 |     **Domains** column *(This was done in Task1: Step 4)*.                                   |
 |                                                                                              |
-| 11. Click the **Action** dots, and then in the subsequent menu **Manage Configuration**.     |
+| 12. Click the **Action** dots, and then in the subsequent menu **Manage Configuration**.     |
 +----------------------------------------------------------------------------------------------+
 | |lab018|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Click **DNS Information** in the left-hand navigation.                                   |
+| 13. Click **DNS Information** in the left-hand navigation.                                   |
 |                                                                                              |
 |     The value for a CNAME is listed under **Host Name**. The associated "Default/Tenant IP"  |
 |                                                                                              |
@@ -216,7 +216,7 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 13. Click **JSON** in the horizontal navigation at the top-left of the screen.               |
+| 14. Click **JSON** in the horizontal navigation at the top-left of the screen.               |
 |                                                                                              |
 |     The JSON payload (or YAML format, from dropdown) provides for the entire Load Balancer   |
 |                                                                                              |
@@ -226,7 +226,7 @@ These steps will demonstrate various aspects of the configuration.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 14. Click **Documentation** in the horizontal navigation at the top of the screen.           |
+| 15. Click **Documentation** in the horizontal navigation at the top of the screen.           |
 |                                                                                              |
 |     The Documentation screen provides details on the F5 Distributed Cloud Console API.       |
 |                                                                                              |
@@ -234,7 +234,7 @@ These steps will demonstrate various aspects of the configuration.
 |                                                                                              |
 |     actions and associated audit logging.                                                    |
 |                                                                                              |
-| 15. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.               |
+| 16. Click **Cancel and Exit** to return to the **HTTP Load Balancers** screen.               |
 +----------------------------------------------------------------------------------------------+
 | |lab021|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -255,7 +255,7 @@ review the generated event data to make additional configuration changes.
 | 2. Using some of the sample attacks below, add the URI path & variables to your application  |
 |                                                                                              |
 |    to generate security event data.                                                          |
-|                                                                                              |                                                                |
+|                                                                                              |
 |    * /product?id=4%20OR%201=1                                                                |
 |    * /../../../../etc/shadow                                                                 |
 |    * /cart?search=aaa'><script>prompt('Please+enter+your+password');</script>                |
@@ -265,7 +265,7 @@ review the generated event data to make additional configuration changes.
 |    to a notepad or note resource).                                                           |
 +----------------------------------------------------------------------------------------------+
 | |lab022|                                                                                     |
-|                                                                                              |                                                                                              |
++----------------------------------------------------------------------------------------------+
 | |lab024|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -395,9 +395,9 @@ review the generated event data to make additional configuration changes.
 |     value field and click **Apply**.                                                         |
 +----------------------------------------------------------------------------------------------+
 | |lab040|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
 | |lab041|                                                                                     |
-|                                                                                              |
++----------------------------------------------------------------------------------------------+
 | |lab042|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
@@ -408,57 +408,11 @@ review the generated event data to make additional configuration changes.
 |                                                                                              |
 | 23. Under the **Actions** column, click on the three Action dots (Scroll to right).          |
 |                                                                                              |
-| 24. Select **Create WAF Exclusion rule** from the dropdown that appears.                     |
+|     This is where you will be able to create WAF Exceptions.                                 |
+|                                                                                              |
+|     Additionally, Add Blocked and Add Trusted Clients is available.                          |
 +----------------------------------------------------------------------------------------------+
 | |lab043|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-.. note::
-   *Adding requestor/client to "Blocked or Trusted Clients" is also available.* 
-
-+----------------------------------------------------------------------------------------------+
-| 25. In the subsequent **Simple WAF Exclusion Rule** window, review the settings (which are   |
-|                                                                                              |
-|     editable) by scrolling through the window.  The values have been auto-populated based on |
-|                                                                                              |
-|     the selected event to be excluded. Note the various sections and possible controls.      |
-|                                                                                              |
-| 26. In the **Expiration  Timestamp** field enter a timestamp 10 minutes from now at which    |
-|                                                                                              |
-|     the exclusion should expire. (helpful when testing/validating). the format should be as  |
-|                                                                                              |
-|     shown *YYYY-MM-DD HH:MM:SS+00:00 (2023-05-30T01:21:00+00:00)*. **HH** must be in 24 hour |
-|                                                                                              |
-|     format (there is no AM/PM).                                                              |
-|                                                                                              |
-| 27. Click **Apply** when complete.                                                           |
-+----------------------------------------------------------------------------------------------+
-| |lab044|                                                                                     |
-|                                                                                              |
-| |lab045|                                                                                     |
-|                                                                                              |
-| |lab046|                                                                                     |
-+----------------------------------------------------------------------------------------------+
-
-+----------------------------------------------------------------------------------------------+
-| 28. Click **Apply** on the **WAF Exclusion Rules** summary screen.                           |
-|                                                                                              |
-| 29. Click on **Security Configuration** in the left-hand navigation and note the added       |
-|                                                                                              |
-|     **WAF Exclusion Rules** configuration.                                                   |
-|                                                                                              |
-| 30. Scroll to the bottom of the **HTTP Load Balancer** configuration window and click the    |
-|                                                                                              |
-|     **Save and Exit** button.                                                                |
-|                                                                                              |
-| .. note::                                                                                    |
-|    *Rerunning the attack you just excluded, you will see that it is no longer blocked*.      |
-+----------------------------------------------------------------------------------------------+
-| |lab047|                                                                                     |
-|                                                                                              |
-| |lab048|                                                                                     |
-|                                                                                              |
-| |lab049|                                                                                     |
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
