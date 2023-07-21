@@ -46,7 +46,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 |                                                                                              |
 |    **Report** which can be reviewed by selecting one of the dropdowns.                       |
 |                                                                                              |
-| 7. Click **Cancel and Exit** to leave this window.                                           |
+| 7. Click **Cancel and Exit** to leave this window. Click **Discard changes** if prompted.    |
 +----------------------------------------------------------------------------------------------+
 | |lab004|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -83,7 +83,7 @@ This lab will begin back in the F5 Distributed Cloud Console.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 12. Select **Security Analytics** from the horizontal navigation.                               |
+| 12. Select **Security Analytics** from the horizontal navigation.                            |
 |                                                                                              |
 | 13. Locate the most recent security event, which should be your curl request. Expand the     |
 |                                                                                              |
