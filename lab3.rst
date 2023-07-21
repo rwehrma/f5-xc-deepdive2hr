@@ -4,7 +4,7 @@ Lab 3: Exploring Service Policies and Routes
 The following lab tasks will guide you the configuration of various Service Policies 
 which can be used to implement a variety of security controls. 
 
-**Expected Lab Time: 15 minutes**
+**Expected Lab Time: 20 minutes**
 
 Task 1: Creating Local Namespace Service Policies  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

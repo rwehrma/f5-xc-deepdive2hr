@@ -4,7 +4,7 @@ Lab 4: Malicious Users
 The following lab tasks will guide you the configuration of the Malicious User Configuration
 which can be used to implement a variety of security controls. 
 
-**Expected Lab Time: 15 minutes**
+**Expected Lab Time: 20 minutes**
 
 Task 1: Creating a User Identification Policy 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
