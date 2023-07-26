@@ -54,7 +54,7 @@ step below to access the F5 Distributed Cloud Lab Tenant.
 |                                                                                              |
 | 2. When you first login, accept the Lab tenant EULA. Click the check box and then click      |
 |                                                                                              |
-|    **Accept and Agree**.                                                                     |
+|    **Accept and Agree**. You will get a new features and highlights screen to click past.    |
 |                                                                                              |
 | 3. Select all work domain roles and click **Next** to see various configuration options.     |
 |                                                                                              |
