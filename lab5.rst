@@ -21,7 +21,7 @@ In this task's series of steps you will import swagger files into the F5 Distrib
 version control features.
 
 +----------------------------------------------------------------------------------------------+
-| 1. For the next series of steps, to download the JSON/OpenAPI spec file **app-api-v1.json**  |
+| 1. For the next series of steps, download the JSON/OpenAPI spec file **app-api-v1.json**     |
 |                                                                                              |
 |    **app-api-v1.json** to your local desktop or workspace.                                   |
 |                                                                                              |
@@ -213,9 +213,8 @@ previously built Load Balancer object delivering the targeted application/API.
 +----------------------------------------------------------------------------------------------+
 
 +----------------------------------------------------------------------------------------------+
-| 6. In the updated **Use API Definition** section, click the drop-down arrow and select the   |
-|                                                                                              |
-| 7. previously created API Definition **<namespace>/app-api-spec**.                           |
+| 6. In the updated **API Definition** section, click the drop-down arrow and select the       |
+|    previously created API Definition **<namespace>/app-api-spec**.                           |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
 +----------------------------------------------------------------------------------------------+
