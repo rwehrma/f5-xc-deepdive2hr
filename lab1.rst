@@ -324,7 +324,7 @@ review the generated event data to make additional configuration changes.
 +----------------------------------------------------------------------------------------------+
 | 11. Using the left-hand navigation, click **Dashboards** and then select **Security**.       |
 |                                                                                              |
-| If you lost your 1 Hour Filter, re-apply using Task 3: Step 7.                               |
+|     If you lost your 1 Hour Filter, re-apply using Task 3: Step 7.                           |
 +----------------------------------------------------------------------------------------------+
 | |lab033|                                                                                     |
 +----------------------------------------------------------------------------------------------+
