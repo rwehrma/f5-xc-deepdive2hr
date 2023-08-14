@@ -50,9 +50,9 @@ version control features.
 |                                                                                              |
 |    the **Metadata** section.                                                                 |
 |                                                                                              |
-| 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the file |
+| 6. In the **Upload Swagger File** section, click the **Upload File** button. Select the      |
 |                                                                                              |
-|    downloaded in Step 1 above and click **Open**.                                            |
+|    file downloaded in Step 1 above and click **Open**.                                       |
 +----------------------------------------------------------------------------------------------+
 | |lab003|                                                                                     |
 +----------------------------------------------------------------------------------------------+
@@ -214,6 +214,7 @@ previously built Load Balancer object delivering the targeted application/API.
 
 +----------------------------------------------------------------------------------------------+
 | 6. In the updated **API Definition** section, click the drop-down arrow and select the       |
+|                                                                                              |
 |    previously created API Definition **<namespace>/app-api-spec**.                           |
 +----------------------------------------------------------------------------------------------+
 | |lab016|                                                                                     |
